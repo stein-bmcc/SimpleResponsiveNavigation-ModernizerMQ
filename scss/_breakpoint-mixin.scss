@@ -1,0 +1,65 @@
+// ================================================
+// Media Query Mixin
+// ================================================
+
+//This mixin assumes a mobile-first style. That means a few things are taken for granted
+// - It uses min-width media queries only. This means any styles you write will apply at the breakpoint given an above. For example the small styles will also apply to medium, large and so on
+//you could modify it to include other types of media queries if you like
+
+
+// BREAKPOINT Variables
+// You can change the values for these breakpoints or add more. If you know the width in pixels, divide it by 16
+// ---------------------------------
+
+$x-small: 30em; //480 and over = 480 / 16
+$small: 40em;  //640px and over = 640 / 16
+$medium: 50em; //800px and over = 800 / 16
+$large: 67.5em; //1080px and over = 1080 / 16
+$x-large: 80em; //1280px and over = 1280 / 16
+$xx-large: 90em; //1440px and over = 1440 / 16
+
+
+//if you want your site to stop getting bigger at some point then make sure to include a max-width rule on the body or a wrapping container
+//For Example
+// .container{
+// 	max-width: 85em;
+// }
+//just make sure the max-width is larger than your biggest breakpoint
+
+@mixin respond-to($size){
+	@if $size == x-small {
+		@media only screen and (min-width: $x-small){
+			@content;
+		}
+	}
+
+	@elseif $size == small {
+		@media only screen and (min-width: $small){
+			@content;
+		}
+	}
+
+	@elseif $size == medium {
+		@media only screen and (min-width: $medium){
+			@content;
+		}
+	}
+
+	@elseif $size == large {
+		@media only screen and (min-width: $large){
+			@content;
+		}
+	}
+
+	@elseif $size == x-large{
+		@media only screen and (min-width: $x-large){
+			@content;
+		}
+	}
+
+	@elseif $size == xx-large{
+		@media only screen and (min-width: $xx-large){
+			@content;
+		}
+	}
+}//end mixin breakpoint

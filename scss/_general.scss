@@ -1,0 +1,30 @@
+
+//====================
+//   General CSS to set things up
+//=====================
+
+*{ 
+  @include box-sizing(border-box); //Compass setting border-box
+}
+
+img,video{width: auto; max-width: 100%; height: auto; margin: 0 auto 1em;}
+
+body{
+  font-size:100%;
+  line-height:1.5;
+  font-family:sans-serif;
+}
+
+p{
+  margin-bottom:1em;
+}
+
+footer{
+  clear:both;
+  border-top: 3px solid #999;
+}
+
+
+
+  
+  

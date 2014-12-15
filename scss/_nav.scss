@@ -1,0 +1,136 @@
+/* ============================
+* NAVIGATION 
+* Modified from: http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/a-simple-responsive-mobile-first-navigation/
+* =============================*/  
+
+@mixin verticalNav{
+  clear:both;
+    
+    ul{
+      list-style: none;
+    }
+    
+    li a{
+      display:block;
+      color:#fff;
+      background-color: #555;
+      text-transform: uppercase;
+      padding: 0.625em; /* 10/16 */
+      text-decoration:none;
+      border-bottom: 1px solid #eee;
+      font-weight:900;
+    }
+    
+    li a:hover{
+      color:#555;
+      background-color: #fff;
+    }
+      
+    li a:active{
+      color:#555;
+      background-color: #f90;
+    }  
+}//end verticalNav Mixin
+
+
+@mixin horizontalNav{
+        overflow:hidden;
+        background-color: #555; 
+        
+        li{
+            display:inline;
+            line-height:1em;
+        }
+        
+        li a{
+            float:left;
+            padding: 0.9375em; /* 10/16  and  15/16 */
+            border-bottom: none;
+        }   
+        
+        /* hide the link to top in the nav */
+        li a.top{
+            display: none;
+        }
+}//end horizontalNav
+  
+#main_nav{
+  @include verticalNav;
+
+  display:none; /*hidden to start */
+}//end main_nav  
+
+#footer_nav{
+  @include verticalNav;
+}
+
+
+
+/* menu button */
+.menu {
+    margin-bottom:1em;
+    
+    a{
+          padding:0.5em 0.625em; /*10/16 */
+          background-color: #555;
+          border-radius:5px;
+          color: #fff;
+          text-decoration:none;
+    }
+          
+    a:hover{
+         color:#555;
+         background-color: #f90;
+    }
+}//end .menu
+
+
+/* ==========================
+*  Media Queries for Main Nav
+*  ========================== */
+/* these don't have to be separate. We did so for two reasons:
+1. Easy to copy and paste this into new design
+2. Depending on your site you may need separate break points for the nav. You may want to see what width is needed to fit your nav horizontally without breaking and use that as the breakpoint. 
+
+It should also be noted that there is only one media query because this CSS moves the nav to the top where it can stay for all of the other sizes.
+*/
+
+/* 656 / 16 */
+
+@include respond-to(medium){
+    /* hide the menu button */
+    .menu{
+	      display:none;
+    }
+    
+   
+    #main_nav{
+       /* move main_nav to top of the screen */
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+
+      display:block; //show nav, hiding earlier
+
+      //style it horizontally
+      @include horizontalNav;
+
+    }//end #main_nav
+    
+    /* move the rest of the page down accordingly */
+    .container{
+        margin-top: 3.75em;  /*60 / 16 */ 
+    }
+      
+    #footer_nav{
+      background-color:#fff;
+      }
+  
+} //end nav breakpoint
+
+
+  
+
+
+

@@ -1,0 +1,79 @@
+
+
+
+//Layout specific to homepage
+.container{
+  width:95%;
+  max-width: 75em; /* 1200 / 16 */
+  margin:0 auto;
+  
+  overflow:hidden;
+    
+  background-color: yellow;
+    
+  @include respond-to(medium){
+    // background-color: green;
+  }
+      
+  @include respond-to(large){
+     // background-color: blue;
+  }
+    
+}//end container
+
+
+// ========================
+// Feature element
+// ========================
+.feature{
+  border:1px solid #555;
+  padding: 0.625em; /* 10/16 */
+  margin-bottom: 1.25em;/*20 /16 */
+  
+  @include respond-to(medium){
+      width:100%;
+      overflow:hidden;
+        
+      p{
+          float:left;
+          width:47.916667%; /*230 / 480*/ 
+          margin-right:4.166666667%; /*20 / 480 */
+          text-align:justify;
+      }
+            
+      p:last-child{
+          margin-right:0; 
+      }      
+            
+            
+  }//end .mid breakpoint
+  
+  
+    @include respond-to(large){
+        float:left;
+        width:31.666667%; /*380 / 1200 */
+        margin-right:2.5%; /* 30/1200 */
+          
+        &:last-child{
+            margin-right:0;
+        }
+            
+        p{
+            width: 100%;
+            float:none;
+            margin:0;
+    
+            /* remember that the text-align is still justify here because we just set the min-width on the previous media query. So all of those styles that aren't overwritten still hold true */
+        }
+            
+        p:first-letter {
+          float: left;
+          font-size: 300%;
+          margin: 0 5px 0 0;
+          line-height:1;
+        }    
+    }//end big respon-to
+  
+}//end .feature
+
+

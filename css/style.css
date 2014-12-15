@@ -1,0 +1,306 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+/* line 5, ../scss/_reset.sass */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 26, ../scss/_reset.sass */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 30, ../scss/_reset.sass */
+body {
+  line-height: 1;
+}
+
+/* line 33, ../scss/_reset.sass */
+ol, ul {
+  list-style: none;
+}
+
+/* line 36, ../scss/_reset.sass */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 39, ../scss/_reset.sass */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* line 44, ../scss/_reset.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 6, ../scss/_general.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 10, ../scss/_general.scss */
+img, video {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 1em;
+}
+
+/* line 12, ../scss/_general.scss */
+body {
+  font-size: 100%;
+  line-height: 1.5;
+  font-family: sans-serif;
+}
+
+/* line 18, ../scss/_general.scss */
+p {
+  margin-bottom: 1em;
+}
+
+/* line 22, ../scss/_general.scss */
+footer {
+  clear: both;
+  border-top: 3px solid #999;
+}
+
+/* line 5, ../scss/_homepage.scss */
+.container {
+  width: 95%;
+  max-width: 75em;
+  /* 1200 / 16 */
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: yellow;
+}
+
+/* line 28, ../scss/_homepage.scss */
+.feature {
+  border: 1px solid #555;
+  padding: 0.625em;
+  /* 10/16 */
+  margin-bottom: 1.25em;
+  /*20 /16 */
+}
+@media only screen and (min-width: 50em) {
+  /* line 28, ../scss/_homepage.scss */
+  .feature {
+    width: 100%;
+    overflow: hidden;
+  }
+  /* line 37, ../scss/_homepage.scss */
+  .feature p {
+    float: left;
+    width: 47.916667%;
+    /*230 / 480*/
+    margin-right: 4.166666667%;
+    /*20 / 480 */
+    text-align: justify;
+  }
+  /* line 44, ../scss/_homepage.scss */
+  .feature p:last-child {
+    margin-right: 0;
+  }
+}
+@media only screen and (min-width: 67.5em) {
+  /* line 28, ../scss/_homepage.scss */
+  .feature {
+    float: left;
+    width: 31.666667%;
+    /*380 / 1200 */
+    margin-right: 2.5%;
+    /* 30/1200 */
+  }
+  /* line 57, ../scss/_homepage.scss */
+  .feature:last-child {
+    margin-right: 0;
+  }
+  /* line 61, ../scss/_homepage.scss */
+  .feature p {
+    width: 100%;
+    float: none;
+    margin: 0;
+    /* remember that the text-align is still justify here because we just set the min-width on the previous media query. So all of those styles that aren't overwritten still hold true */
+  }
+  /* line 69, ../scss/_homepage.scss */
+  .feature p:first-letter {
+    float: left;
+    font-size: 300%;
+    margin: 0 5px 0 0;
+    line-height: 1;
+  }
+}
+
+/* ============================
+* NAVIGATION 
+* Modified from: http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/a-simple-responsive-mobile-first-navigation/
+* =============================*/
+/* line 57, ../scss/_nav.scss */
+#main_nav {
+  clear: both;
+  display: none;
+  /*hidden to start */
+}
+/* line 9, ../scss/_nav.scss */
+#main_nav ul {
+  list-style: none;
+}
+/* line 13, ../scss/_nav.scss */
+#main_nav li a {
+  display: block;
+  color: #fff;
+  background-color: #555;
+  text-transform: uppercase;
+  padding: 0.625em;
+  /* 10/16 */
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+  font-weight: 900;
+}
+/* line 24, ../scss/_nav.scss */
+#main_nav li a:hover {
+  color: #555;
+  background-color: #fff;
+}
+/* line 29, ../scss/_nav.scss */
+#main_nav li a:active {
+  color: #555;
+  background-color: #f90;
+}
+
+/* line 63, ../scss/_nav.scss */
+#footer_nav {
+  clear: both;
+}
+/* line 9, ../scss/_nav.scss */
+#footer_nav ul {
+  list-style: none;
+}
+/* line 13, ../scss/_nav.scss */
+#footer_nav li a {
+  display: block;
+  color: #fff;
+  background-color: #555;
+  text-transform: uppercase;
+  padding: 0.625em;
+  /* 10/16 */
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+  font-weight: 900;
+}
+/* line 24, ../scss/_nav.scss */
+#footer_nav li a:hover {
+  color: #555;
+  background-color: #fff;
+}
+/* line 29, ../scss/_nav.scss */
+#footer_nav li a:active {
+  color: #555;
+  background-color: #f90;
+}
+
+/* menu button */
+/* line 70, ../scss/_nav.scss */
+.menu {
+  margin-bottom: 1em;
+}
+/* line 73, ../scss/_nav.scss */
+.menu a {
+  padding: 0.5em 0.625em;
+  /*10/16 */
+  background-color: #555;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+}
+/* line 81, ../scss/_nav.scss */
+.menu a:hover {
+  color: #555;
+  background-color: #f90;
+}
+
+/* ==========================
+*  Media Queries for Main Nav
+*  ========================== */
+/* these don't have to be separate. We did so for two reasons:
+1. Easy to copy and paste this into new design
+2. Depending on your site you may need separate break points for the nav. You may want to see what width is needed to fit your nav horizontally without breaking and use that as the breakpoint. 
+
+It should also be noted that there is only one media query because this CSS moves the nav to the top where it can stay for all of the other sizes.
+*/
+/* 656 / 16 */
+@media only screen and (min-width: 50em) {
+  /* hide the menu button */
+  /* line 102, ../scss/_nav.scss */
+  .menu {
+    display: none;
+  }
+
+  /* line 107, ../scss/_nav.scss */
+  #main_nav {
+    /* move main_nav to top of the screen */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    background-color: #555;
+    /* hide the link to top in the nav */
+  }
+  /* line 40, ../scss/_nav.scss */
+  #main_nav li {
+    display: inline;
+    line-height: 1em;
+  }
+  /* line 45, ../scss/_nav.scss */
+  #main_nav li a {
+    float: left;
+    padding: 0.9375em;
+    /* 10/16  and  15/16 */
+    border-bottom: none;
+  }
+  /* line 52, ../scss/_nav.scss */
+  #main_nav li a.top {
+    display: none;
+  }
+
+  /* move the rest of the page down accordingly */
+  /* line 122, ../scss/_nav.scss */
+  .container {
+    margin-top: 3.75em;
+    /*60 / 16 */
+  }
+
+  /* line 126, ../scss/_nav.scss */
+  #footer_nav {
+    background-color: #fff;
+  }
+}
